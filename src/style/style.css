@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("../../img/background.png") no-repeat center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.firstline img {
+    height: 150px;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+#inputIncant {
+    margin-left: 20%;
+    text-align: center;
+    width: 70%;
+}
+
+#Incantation {
+    text-align: center;
+}
+
+#Ask {
+    text-align: center;
+}
+
+#inputAsk {
+    margin-top: 10%;
+}
+
+#Submit {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.shake {
+    animation: shake 0.8s cubic-bezier(.36, .07, .19, .97) both infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(4px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-8px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(8px, 0, 0);
+    }
+}
+
+#8-ball back-ball img {
+    margin-top: 15%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+#ball_container {
+    position: relative;
+    z-index: 2;
+}
+
+#ball_container {
+    width: 100%;
+}
+
+#ball_card {
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+
+.ball_back #ball_card {
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 5px #aaa;
+}
+
+.face {
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.face.back {
+    transform: rotateY(180deg);
+}
+
+#meme {
+    top: 15%;
+    left: 15%;
+    position: absolute;
+    width: 70%;
+    max-height:60%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.centered {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: white;
+    font-size: 200%;
+    font-family: "Arial Black";
+    transform: translate(-50%, -50%);
+}
+
+.appear {
+    animation: fadeInFromNone 0.5s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+}
+
+@keyframes fadeInFromNone {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#retry {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    z-index: 1;
+}
