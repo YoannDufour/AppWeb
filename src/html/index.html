@@ -2,11 +2,101 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TruthBall</title>
     <link rel="stylesheet" type="text/css" href="../style/css/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/jquery/bootstrap.min.js"></script>
+    <script src="../js/truthballanimation.js"></script>
+    <script src="../js/truthballAPI.js"></script>
 </head>
-<body>
 
+
+<div class="modal fade show" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Guide d'utilisation</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3 style="text-align:center;"> Bienvenue à toi, qui cherche une réponse !</h3>
+                <br/>
+                <p>Tu trouveras ici la réponse
+                    à ta question, mais à condition que tu accomplisses le rituel :</p>
+                <ul>
+                    <li> Tu devras écrire l'incantation qui servira à invoquer la Boule</li>
+                    <ul>
+                        <p>Exemple :</p>
+                        <li>"Plus on est grand, moins on est petit."</li>
+                        <li>"Si vous voulez savoir la vérité, écoutez les fous."</li>
+                        <li>"Le vieil éléphant sait où trouver de l'eau."</li>
+                    </ul>
+                    <li> Tu écriras ensuite ta question fermée, afin que la Boule puisse te répondra par "oui" ou par "non"</li>
+                    <li> Tu recevras enfin la vérité absolue. </li>
+                    <li> La question ainsi que la réponse seront répertoriées sous forme de message immatériel (un tweet.) mais ne craint rien, ton anonymat sera protégé. </li>
+                </ul>
+                <p>@TruthBall2</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<body class="container">
+<div id="global_form">
+    <div class="row firstline">
+        <img class="rounded mx-auto d-block " src="../../img/illuminati.png">
+    </div>
+    <div class="form">
+        <div class="input-group input-group-lg" id="inputIncant">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-1">Incantation</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                   aria-describedby="inputGroup-1" id="Incantation" oninput="incant()">
+        </div>
+
+        <div class="input-group input-group-lg" id="inputAsk">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-2">Qu'elle est votre question</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                   aria-describedby="inputGroup-2" id="Ask">
+        </div>
+        <div id="Submit">
+            <button type="button" class="btn btn-secondary btn-lg" onclick="changeDisplay()"> Demander à la Boule
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="truthBall" style="display:none;">
+    <div id="retry">
+        <button type="button" class="btn btn-secondary btn-lg" onclick="changeDisplay()">Rejouer</button>
+    </div>
+    <div id="ball_container">
+        <div id="ball_card" class="shadow">
+            <div class="front face">
+                <img id="8-ball" src="../../img/8-Front.png" class="shake img-fluid">
+            </div>
+            <div class="back face">
+                <img id="back-ball" src="../../img/answer-face.png" class="img-fluid">
+                <img id="meme" src="">
+                <div class="centered" id="reponse"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-danger alert-dismissible fade ">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Attention vous devez remplir les deux champs!</strong>
+</div>
 </body>
 </html>
