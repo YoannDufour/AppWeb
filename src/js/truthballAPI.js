@@ -11,7 +11,16 @@ function YESNO() {
             imageURL = data.image;
             document.getElementById("meme").src = imageURL;
             document.getElementById("reponse").innerHTML = answer.toUpperCase();
-
+            switch (answer) {
+                case 'no': {
+                    answer = "Non";
+                    break;
+                }
+                case 'yes': {
+                    answer = "Oui";
+                    break;
+                }
+            }
             sendTweet(document.getElementById("Ask").value + " : " + answer, imageURL);
         }
     }
