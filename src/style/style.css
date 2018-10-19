@@ -108,7 +108,7 @@ footer {
     left: 15%;
     position: absolute;
     width: 70%;
-    max-height:60%;
+    max-height: 60%;
     z-index: 1;
     opacity: 0;
 }
@@ -144,3 +144,4 @@ footer {
     text-align: center;
     z-index: 1;
 }
+
