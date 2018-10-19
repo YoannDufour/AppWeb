@@ -15,13 +15,13 @@ function incant() {
 
 
 function changeDisplay() {
-    if (isBall == 0 && document.getElementById("Incantation").value!="" && document.getElementById("Ask").value!="") {
+    if (isBall == 0 && document.getElementById("Incantation").value != "" && document.getElementById("Ask").value != "") {
         document.getElementById("global_form").style.display = "none";
         isBall = 1;
         document.getElementById("truthBall").style.display = "initial";
         document.getElementById("ball_container").onclick = function () {
-            turnBall();
             YESNO();
+            turnBall();
             this.onclick = null;
         };
         return;
@@ -35,11 +35,11 @@ function changeDisplay() {
         document.getElementById("reponse").innerHTML = "";
         document.getElementById("meme").classList.remove("appear");
         document.getElementById("retry").classList.remove("appear");
-        document.getElementById("Incantation").value="";
-        document.getElementById("Ask").value="";
+        document.getElementById("Incantation").value = "";
+        document.getElementById("Ask").value = "";
         return;
     }
-    else{
+    else {
         document.getElementsByClassName("alert")['0'].classList.add("in");
         document.getElementsByClassName("alert")['0'].classList.add("show");
     }
